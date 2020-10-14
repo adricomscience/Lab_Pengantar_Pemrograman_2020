@@ -8,7 +8,7 @@ public class Praktikum1_3
         Praktikum1_3 pK = new Praktikum1_3();
         Scanner scanner = new Scanner(System.in);
         int b,a;
-        float h;
+        float h,y,z,hasil;
 
         System.out.println("Nama : Rendy Luis\nNim : H071201042\nKelas : Ilmu Komputer A\n");
         System.out.println("=======================================Praktikum 1.3=======================================\n");
@@ -20,7 +20,10 @@ public class Praktikum1_3
 
         if(90>a && a>b)
         {
-            System.out.printf("Panjang kapal tersebut adalah = %.1f m\n", pK.panjangKapal(h,a,b));
+            y = (float)Math.tan(Math.toRadians(a));
+            z = (float)Math.tan(Math.toRadians(b));
+            hasil = y*h-z*h;
+            System.out.printf("Panjang kapal tersebut adalah = %.1f m\n", hasil);
         }
         else
         {
@@ -29,10 +32,5 @@ public class Praktikum1_3
         System.out.println("===========================================================================================");
     }
 
-    private float panjangKapal(float x, float y, float z)
-    {
-        y = (float)Math.tan(Math.toRadians(y));
-        z = (float)Math.tan(Math.toRadians(z));
-        return y*x-z*x;
-    }
+
 }
